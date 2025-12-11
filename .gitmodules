@@ -1,0 +1,15 @@
+[submodule "nand2tetris"]
+	path = nand2tetris
+	url = https://github.com/fauzanfebrian/nand2tetris.git
+[submodule "xv6-riscv"]
+	path = xv6-riscv
+	url = https://github.com/fauzanfebrian/xv6-riscv.git
+[submodule "linux-kernel-hacking"]
+	path = linux-kernel-hacking
+	url = https://github.com/fauzanfebrian/linux-kernel-hacking.git
+[submodule "c-memory-playground"]
+	path = c-memory-playground
+	url = https://github.com/fauzanfebrian/c-memory-playground.git
+[submodule "cusdeb-open-source-playground"]
+	path = cusdeb-open-source-playground
+	url = https://github.com/fauzanfebrian/cusdeb-open-source-playground.git
