@@ -1,0 +1,42 @@
+name: Sync Engineering Journey
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-submodules:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Update Submodules
+        run: |
+          # Pulls the latest commit from the tracked branch (usually main/master)
+          git submodule init
+          git submodule update --remote --recursive
+
+      - name: Check for Changes & Commit
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "Updates found in submodules. Committing..."
+            git add .
+            git commit -m "Auto-sync: Updated submodule pointers [skip ci]"
+            git push
+          else
+            echo "No changes in submodules. Skipping commit."
+          fi
