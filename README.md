@@ -12,7 +12,7 @@ This monorepo documents my Systems Engineering Journey. It maps the complete com
 * **[xv6-riscv](https://github.com/fauzanfebrian/xv6-riscv)** — *The playground.*
   - **Key Achievement:** Copied a Go routine in C using the RISC-V pipe syscall.
 * **[linux-kernel-hacking](https://github.com/fauzanfebrian/linux-kernel-hacking)** — *The real world.*
-  - **Key Achievement:** Created a basic Linux kernel module.
+  - **Key Achievement:** Create a Char Device Driver Linux Kernel Module.
 
 ### Layer 3: The Application & Infrastructure 🌐
 * **[c-memory-playground](https://github.com/fauzanfebrian/c-memory-playground)** — *Mastering the tool.*
